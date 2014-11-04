@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation"
+        value="false" />
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.custom.i18n.resources"
+        value="ApplicationResources" />
+ 
+    <package name="default" extends="struts-default" namespace="/">
+        <action name="loginvalidate"
+            class="com.cluster.ehis.actions.LoginAction">
+            <result name="admin">/jsp/adminhomepage.jsp</result>
+             <result name="reception">/jsp/receptionhomepage.jsp</result>
+            <result name="success">Welcome.jsp</result>
+            <result name="error">login.jsp</result>
+        </action>
+        
+        
+        <action name="logout">
+        <result name="success">login.jsp</result>
+        </action>
+        
+       
+          <action name="dashboard">
+          <result name="success">/jsp/adminhomepage.jsp</result>
+          </action>  
+        
+        <action name="department" class="com.cluster.ehis.actions.DepartmentAction" method="getAll" >
+        
+         <result name="success">/jsp/deparmentList.jsp</result>
+        </action>
+        
+        
+         <action name="addDept" class="com.cluster.ehis.actions.DepartmentAction" method="addDept" >
+        <result type="chain">department</result>
+        </action>
+        
+        
+         <action name="updateDept" class="com.cluster.ehis.actions.DepartmentAction" method="updateDept" >
+        <result type="chain">department</result>
+        </action>
+        
+         <action name="regpatientHome" class="com.cluster.ehis.actions.PatientAction" method="getAll" >
+        
+         <result name="success">/jsp/patientList.jsp</result>
+        </action>
+        
+        
+            <action name="addPatient">
+          <result name="success">/jsp/addPatient.jsp</result>
+          </action>
+          
+            <action name="addPatientAction" class="com.cluster.ehis.actions.PatientAction" method="addPatient" >
+            <result name="input">/jsp/addPatient.jsp</result>
+        	<result type="chain">regpatientHome</result>
+        </action>
+        
+         <action name="viewPatient" class="com.cluster.ehis.actions.PatientAction" method="addPatient" >
+            <result name="success">/jsp/viewPatient.jsp</result>
+        </action>
+        
+        
+        
+        
+        
+    </package>
+</struts>

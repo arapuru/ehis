@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cluster.ehis.pojos">
+
+    <class name="Patient" table="Patient">
+ 		<id name="id" column="id">
+            <generator class="increment"/>
+        </id>
+        <property name="firstname" type="string"/>
+        <property name="lastname" type="string"/>
+        <property name="email" type="string"/>
+        <property name="address" type="string" column="address"/>
+        <property name="sex" type="string" column="sex"/>
+        <property name="phone" type="int" column="phone"/>
+        <property name="birthdate" type="date" column="birthdate"/>
+         <property name="age" type="int" column="age"/>
+         <property name="bloodgroup" type="string" column="bloodgroup"/>
+       
+	</class>
+
+</hibernate-mapping>
