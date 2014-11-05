@@ -51,4 +51,14 @@ public class DepartmentServiceImpl implements DepartmentService {
 		return departmentBean;
 	}
 
+
+	@Override
+	public DepartmentBean getDepartmentById(Integer deptId) {
+		Department department = deparmentDAO.findById(deptId, false);
+		DepartmentBean departmentBean = FormConvertor.convertDepartmentPojoToBean(department);
+		
+		
+		return departmentBean;
+	}
+
 }

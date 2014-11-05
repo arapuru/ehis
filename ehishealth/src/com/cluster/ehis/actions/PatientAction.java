@@ -42,9 +42,9 @@ public class PatientAction extends ActionSupport implements	ModelDriven<PatientB
 	 }
 	}
 	
-	public String viewPatient(Integer id){
+	/*public String viewPatient(){
 		String resultname =ERROR;
-		patientBean = patientService.getPatient(id);
+		patientBean = patientService.getPatient(patientBean.getId());
 		
 		if(patientBean!=null){
 			resultname = SUCCESS;
@@ -54,7 +54,7 @@ public class PatientAction extends ActionSupport implements	ModelDriven<PatientB
 		}
 		return resultname;
 	}
-	
+	*/
 	
 
 	@Override

@@ -47,9 +47,9 @@ public class LoginAction extends ActionSupport implements ModelDriven<LoginBean>
 				resultname =  "reception";
 			}
 			
-			if(userrole.equalsIgnoreCase("Accountant")){
+			if(userrole.equalsIgnoreCase("pharmacist")){
 				
-				resultname =  "Accountant";
+				resultname =  "pharmacist";
 			}
 			
 			if(userrole.equalsIgnoreCase("nurse")){

@@ -17,4 +17,6 @@ public interface DepartmentService {
 
 	public DepartmentBean addDepartment(DepartmentBean departmentBean);
 
+	public DepartmentBean getDepartmentById(Integer deptId);
+
 }

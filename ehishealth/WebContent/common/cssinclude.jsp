@@ -1,4 +1,3 @@
- <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +17,6 @@
     
     <title>EHIS Electronic Health Information System </title>
     
-<s:head theme="simple"/>
    
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

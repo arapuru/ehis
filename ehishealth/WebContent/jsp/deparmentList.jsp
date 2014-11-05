@@ -18,42 +18,10 @@
           	<div class="row mt">
           	<div class="col-md-12">
           	
-          	
-          	
-          	<div class="form-panel">
-          	<h3>Welcome to Department Management</h3>
-          	
-          	<s:form theme="simple" action="addDept" cssClass="form-horizontal" >
-          	
-          	<div class="form-group">
-                 <label class="col-sm-2 col-sm-2 control-label">Name</label>
-                 <div class="col-sm-10">
-                 <s:textfield name="name" value="" cssClass="form-control" placeholder ="Enter Name" ></s:textfield>
-                 </div>
-            </div>
-            
-             	<div class="form-group">
-                 <label class="col-sm-2 col-sm-2 control-label">Description</label>
-                 <div class="col-sm-10">
-                 
-                 <s:textarea name="desc" value="" rows="5" cols="10" cssClass="form-control" placeholder ="Enter Description"  ></s:textarea>
-                 </div>
-            </div>
-            
-            <div class="form-group">
-                 <label class="col-sm-2 col-sm-2 control-label"></label>
-                 <div class="col-sm-10">
-                 
-                 <s:submit cssClass="btn btn-primary btn-lg btn-theme" ></s:submit>
-                 </div>
-            </div>
-          	          	
-          	
-          	</s:form>
-          	
-          	</div>
+      
           	<br>
            <div class="form-panel">
+            <a href="addDept.action" class="btn btn-primary btn-theme" > Add Department </a>
           	         		
          <table class="table table-striped table-advance table-hover">
     <tr>

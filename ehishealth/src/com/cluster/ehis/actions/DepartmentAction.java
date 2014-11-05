@@ -6,6 +6,10 @@ package com.cluster.ehis.actions;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.interceptor.ServletRequestAware;
+
 import com.cluster.ehis.beans.DepartmentBean;
 import com.cluster.ehis.service.DepartmentService;
 import com.cluster.ehis.serviceimpl.DepartmentServiceImpl;
@@ -16,7 +20,8 @@ import com.opensymphony.xwork2.ModelDriven;
  * @author aravind rapuru
  *
  */
-public class DepartmentAction extends ActionSupport implements ModelDriven<DepartmentBean> {
+public class DepartmentAction extends ActionSupport
+implements ModelDriven<DepartmentBean>,ServletRequestAware{
 
 	/**
 	 * 
@@ -28,7 +33,7 @@ public class DepartmentAction extends ActionSupport implements ModelDriven<Depar
 	public static  List<DepartmentBean> departmentList = new ArrayList<DepartmentBean>();
 	 
 	DepartmentBean departmentBean = null;
-	
+	HttpServletRequest request;
 	
 	/**
 	 * @return
@@ -48,6 +53,12 @@ public class DepartmentAction extends ActionSupport implements ModelDriven<Depar
 		return SUCCESS;
 	}
 	
+	public String editDept(){
+		Integer deptId = Integer.parseInt(request.getParameter("Id"));
+		departmentBean = departmentService.getDepartmentById(deptId);
+		return SUCCESS;
+		
+	}
 	
 
 	
@@ -63,11 +74,19 @@ public class DepartmentAction extends ActionSupport implements ModelDriven<Depar
 	}
 
 
+	public void setServletRequest(HttpServletRequest request) {
+		this.request = request;
+	}
+ 
+	public HttpServletRequest getServletRequest() {
+		return this.request;
+	}
+
+
 	@Override
 	public DepartmentBean getModel() {
-
-		departmentBean = new DepartmentBean(); 
-		return departmentBean;
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
